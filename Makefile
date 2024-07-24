@@ -3,6 +3,7 @@ REGISTRY=lonerko
 VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
 TARGETOS=linux #arm64 windows
 TARGETARCH=amd64 #arm64 amd64
+IMAGE_TAG=${REGISTRY}/${APP}:${VERSION}-${TARGETARCH}
 
 format:
 	gofmt -s -w ./
@@ -27,3 +28,4 @@ push:
 
 clean:
 	rm -rf tbot
+	docker rmi ${IMAGE_TAG}

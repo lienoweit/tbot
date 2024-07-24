@@ -1,8 +1,8 @@
-FROM golang:1.22 as builder
+FROM golang:1.20 as builder
 
 WORKDIR /go/src/app
 copy . .
-RUN go mod download
+#RUN go mod download
 RUN make build
 
 FROM scratch

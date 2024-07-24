@@ -1,6 +1,6 @@
 module githhub.com/lienoweit/tbot
 
-go 1.22
+go 1.20
 require (
 	github.com/spf13/cobra v1.8.1
 	gopkg.in/telebot.v3 v3.3.6
